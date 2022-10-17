@@ -45,7 +45,7 @@ chrome_options = Options()
 chrome_options.add_argument("--headless")
 chrome_options.add_argument("--disable-notifications");
 chrome_options.add_experimental_option('excludeSwitches', ['enable-logging'])
-PATH = ("./chromedriver.exe")
+PATH = ("./chromedriver")
 driver = webdriver.Chrome(executable_path=PATH, options = chrome_options)
 
 
