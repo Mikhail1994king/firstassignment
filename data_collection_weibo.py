@@ -8,6 +8,7 @@ from selenium.webdriver.common.by import By
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.chrome.service import Service
 import time
 import pandas as pd
 import os.path
@@ -45,8 +46,10 @@ chrome_options = Options()
 chrome_options.add_argument("--headless")
 chrome_options.add_argument("--disable-notifications");
 chrome_options.add_experimental_option('excludeSwitches', ['enable-logging'])
-PATH = ("./chromedriver")
-driver = webdriver.Chrome(executable_path=PATH, options = chrome_options)
+service = Service('./chromedriver')
+driver = webdriver.Chrome(service=service, options = chrome_options)
+
+
 
 
 
